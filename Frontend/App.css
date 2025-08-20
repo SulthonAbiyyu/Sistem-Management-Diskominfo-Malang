@@ -1,0 +1,270 @@
+.sdf {
+  display: inline-block;
+  margin-left: 120px;
+}
+
+.img_logo {
+  width: 171px;
+  height: 100%;
+}
+
+.background_navbar {
+  width: 100%;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.batasan {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.cde {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+.cde li {
+  margin-left: 20px;
+}
+
+.cde li span {
+  font-size: 20px;
+}
+
+.cde li span:hover {
+  cursor: pointer;
+  color: #d35050ed;
+}
+
+.kjh:hover {
+  cursor: pointer;
+  color: #d35050ed;
+}
+
+.kjs {
+  padding: 60px 0 60px 0;
+}
+
+.jhg {
+  font-size: 14px;
+  color: #858585;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0px;
+}
+
+.bnn {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.bnn li {
+  margin-left: 20px;
+}
+
+.bnn li span {
+  font-size: 20px;
+  color: #858585;
+}
+
+.bnn li span:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.opl {
+  margin-left: 120px;
+}
+
+.lom {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  color: #fff;
+}
+
+.lom li {
+  padding-right: 20px;
+}
+
+.lom li span {
+  font-size: 20px;
+}
+
+.lom li span:hover {
+  cursor: pointer;
+  color: #d35050ed;
+}
+
+.mbv {
+
+  display: none;
+}
+
+.kaki {
+  height: 100vh; 
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  padding: 60px;
+  background-color: #252525;
+  left: 0px;
+}
+
+.xms {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 60%;
+  overflow: auto;
+  margin-top: 50px;
+}
+
+.xms li {
+  color: #fff;
+}
+
+.xms li a {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 15px 0px 15px 0px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+  width: 100%;
+}
+
+.xms li a:hover {
+  color: #d35050;
+}
+
+.skd p {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.sokad {
+  text-decoration: none;
+}
+
+.sdko {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.dsok {
+  color: #900000;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.keks {
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+}
+
+.qwe {
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+}
+
+.adsl {
+  margin-bottom: 40px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sdds {
+  margin-bottom: 40px;
+}
+
+.asd {
+  margin-bottom: 40px;
+}
+
+.sddd {
+  margin-bottom: 40px;
+}
+
+.addd {
+  margin-bottom: 40px;
+}
+
+
+
+@media screen and (max-width: 522px) {
+  .img_logo {
+    width: 200px;
+  }
+
+  .cai {
+    display: none;
+  }
+
+  .cde li {
+    margin-left: 0px;
+  }
+
+  .sdf {
+    margin-left: 0px;
+  }
+
+  .bnn {
+    display: none;
+  }
+
+  .opl {
+    margin-left: 0;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+  .sdds {
+    margin-bottom: 40px;
+  }
+
+  .asd {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sdds {
+    margin-bottom: 40px;
+  }
+
+  .asd {
+    margin-bottom: 40px;
+  }
+}
+
+
+.css-kyxml5-MuiTypography-root {
+  margin: 0;
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #ffffff;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+
+
+
+
+
+
+

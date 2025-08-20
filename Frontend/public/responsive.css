@@ -1,0 +1,21 @@
+.app {
+  min-height: calc(100vh - 40px);
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 569px) {
+  .box-topbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .box-topbar .search,
+  .box-topbar .logo {
+    width: 100%;
+  }
+  .box-topbar .logo {
+    justify-content: space-between;
+  }
+}
