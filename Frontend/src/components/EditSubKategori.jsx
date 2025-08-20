@@ -18,7 +18,7 @@ const EditSubKategori = () => {
   useEffect(() => {
     const fetchSubKategoriDetail = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/subkategori/${id}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/subkategori/${id}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -39,7 +39,7 @@ const EditSubKategori = () => {
   useEffect(() => {
     const fetchKategori = async () => {
       try {
-        const response = await fetch('http://localhost:4000/kategori');
+        const response = await fetch('${process.env.REACT_APP_API_URL}/kategori');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -61,7 +61,7 @@ const EditSubKategori = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:4000/subkategori/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/subkategori/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

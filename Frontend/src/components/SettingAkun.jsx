@@ -18,7 +18,7 @@ const SettingAkun = () => {
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser && currentUser.id) {
-      fetch(`http://localhost:4000/users/${currentUser.id}`)
+      fetch(`${process.env.REACT_APP_API_URL}/users/${currentUser.id}`)
         .then((response) => response.json())
         .then((data) => {
           setUser(data);
@@ -49,7 +49,7 @@ const SettingAkun = () => {
       formData.append('foto', selectedFile); // Append the new profile picture
     }
 
-    fetch(`http://localhost:4000/users/${user.id}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/users/${user.id}`, {
       method: 'PUT',
       body: formData, // Send FormData
     })

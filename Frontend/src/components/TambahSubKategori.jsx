@@ -18,7 +18,7 @@ const TambahSubKategori = () => {
   useEffect(() => {
     const fetchKategori = async () => {
       try {
-        const response = await fetch('http://localhost:4000/kategori');
+        const response = await fetch('${process.env.REACT_APP_API_URL}/kategori');
         const data = await response.json();
         setKategoriList(data); 
       } catch (error) {
@@ -43,7 +43,7 @@ const TambahSubKategori = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:4000/subkategori', {
+      const response = await fetch('${process.env.REACT_APP_API_URL}/subkategori', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

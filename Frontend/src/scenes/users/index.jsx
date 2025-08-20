@@ -62,7 +62,7 @@ const Users = () => {
     // Fetch users from the server at the beginning
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:4000/users");
+        const response = await fetch("${process.env.REACT_APP_API_URL}/users");
         const data = await response.json();
         setUsers(data);
       } catch (error) {
@@ -86,7 +86,7 @@ const Users = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:4000/users/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${id}`, {
         method: 'DELETE',
       });
 
@@ -144,7 +144,7 @@ const Users = () => {
               }}>
                 <Box display="flex" justifyContent="center" p={1}>
                   <Avatar
-                    src={user.foto ? `http://localhost:4000${user.foto}` : ''}
+                    src={user.foto ? `${process.env.REACT_APP_API_URL}${user.foto}` : ''}
                     sx={{
                       width: 100,
                       height: 100,

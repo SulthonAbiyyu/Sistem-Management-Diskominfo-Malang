@@ -32,11 +32,11 @@ const SubkategoriDetail = () => {
     const fetchData = async () => {
       try {
         // Fetch aset data filtered by subkategoriId
-        const asetResponse = await fetch(`http://localhost:4000/aset?subkategoriId=${id}`);
+        const asetResponse = await fetch(`${process.env.REACT_APP_API_URL}/aset?subkategoriId=${id}`);
         const asetData = await asetResponse.json();
 
         // Fetch subkategori data
-        const subkategoriResponse = await fetch(`http://localhost:4000/subkategori`);
+        const subkategoriResponse = await fetch(`${process.env.REACT_APP_API_URL}/subkategori`);
         const subkategoriData = await subkategoriResponse.json();
 
         // Create a map to convert subkategori ID to subkategori name
@@ -110,7 +110,7 @@ const SubkategoriDetail = () => {
       align: 'center',
       renderCell: (params) => (
         <img
-          src={`http://localhost:4000${params.value}`}
+          src={`${process.env.REACT_APP_API_URL}${params.value}`}
           alt="dokumentasi"
           style={{
             width: "75px",
@@ -120,7 +120,7 @@ const SubkategoriDetail = () => {
             borderRadius: "8px",
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)"
           }}
-          onClick={() => handleOpenModal(`http://localhost:4000${params.value}`)}
+          onClick={() => handleOpenModal(`${process.env.REACT_APP_API_URL}${params.value}`)}
         />
       )
     },

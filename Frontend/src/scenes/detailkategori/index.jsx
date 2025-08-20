@@ -19,7 +19,7 @@ const Detailkategori = () => {
   useEffect(() => {
     const fetchSubkategoriDetail = async () => {
       try {
-        const subkategoriResponse = await fetch("http://localhost:4000/subkategori");
+        const subkategoriResponse = await fetch("${process.env.REACT_APP_API_URL}/subkategori");
         const subkategoriData = await subkategoriResponse.json();
 
         const filteredData = subkategoriData.filter(sub => sub.kategoriId === parseInt(id));
@@ -32,7 +32,7 @@ const Detailkategori = () => {
 
         setRows(transformedData);
 
-        const kategoriResponse = await fetch("http://localhost:4000/kategori");
+        const kategoriResponse = await fetch("${process.env.REACT_APP_API_URL}/kategori");
         const kategoriData = await kategoriResponse.json();
         const kategoriItem = kategoriData.find(kat => kat.id === parseInt(id));
 
@@ -64,7 +64,7 @@ const Detailkategori = () => {
     const confirmed = window.confirm("Apakah kamu yakin ingin menghapus subkategori ini?");
     if (confirmed) {
       try {
-        const response = await fetch(`http://localhost:4000/subkategori/${selectedSubkategori.id}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/subkategori/${selectedSubkategori.id}`, {
           method: "DELETE",
         });
         if (response.ok) {

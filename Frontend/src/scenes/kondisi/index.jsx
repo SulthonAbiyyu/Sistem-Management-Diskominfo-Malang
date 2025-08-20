@@ -28,7 +28,7 @@ const Kondisi = () => {
   useEffect(() => {
     const fetchKondisi = async () => {
       try {
-        const response = await fetch("http://localhost:4000/kondisi");
+        const response = await fetch("${process.env.REACT_APP_API_URL}/kondisi");
         const data = await response.json();
         setKondisi(data);
       } catch (error) {
@@ -43,7 +43,7 @@ const Kondisi = () => {
     const confirmed = window.confirm("Apakah kamu yakin ingin menghapus data ini?");
     if (confirmed) {
       try {
-        const response = await fetch(`http://localhost:4000/kondisi/${id}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/kondisi/${id}`, {
           method: "DELETE",
         });
         if (response.ok) {

@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
     const savedUser = localStorage.getItem("currentUser");
     const userId = savedUser ? JSON.parse(savedUser).id : null;
     if (userId) {
-      fetch(`http://localhost:4000/users/logout/${userId}`, {
+      fetch(`${process.env.REACT_APP_API_URL}/users/logout/${userId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

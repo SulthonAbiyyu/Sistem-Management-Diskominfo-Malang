@@ -30,19 +30,19 @@ const EditAset = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const kategoriResponse = await fetch('http://localhost:4000/kategori');
+        const kategoriResponse = await fetch('${process.env.REACT_APP_API_URL}/kategori');
         const kategoriData = await kategoriResponse.json();
         setKategoriList(kategoriData);
 
-        const subKategoriResponse = await fetch('http://localhost:4000/subkategori');
+        const subKategoriResponse = await fetch('${process.env.REACT_APP_API_URL}/subkategori');
         const subKategoriData = await subKategoriResponse.json();
         setSubKategoriList(subKategoriData);
 
-        const kondisiResponse = await fetch('http://localhost:4000/kondisi');
+        const kondisiResponse = await fetch('${process.env.REACT_APP_API_URL}/kondisi');
         const kondisiData = await kondisiResponse.json();
         setKondisiList(kondisiData);
 
-        const asetResponse = await fetch(`http://localhost:4000/aset/${id}`);
+        const asetResponse = await fetch(`${process.env.REACT_APP_API_URL}/aset/${id}`);
         const asetData = await asetResponse.json();
 
         if (asetData) {
@@ -101,7 +101,7 @@ const EditAset = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:4000/aset/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/aset/${id}`, {
         method: 'PUT',
         body: formData,
       });

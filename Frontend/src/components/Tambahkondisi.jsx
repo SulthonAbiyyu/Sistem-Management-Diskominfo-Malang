@@ -26,7 +26,7 @@ const TambahKondisi = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:4000/kondisi', {
+      const response = await fetch('${process.env.REACT_APP_API_URL}/kondisi', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -32,7 +32,7 @@ const Resetsandi = () => {
   // Fetch data from the 'requestresetsandi' table in the database
   const fetchRequestResetSandi = async () => {
     try {
-      const response = await fetch("http://localhost:4000/requestsandi");
+      const response = await fetch("${process.env.REACT_APP_API_URL}/requestsandi");
       if (!response.ok) {
         throw new Error("Gagal mengambil data reset sandi.");
       }
@@ -87,7 +87,7 @@ const Resetsandi = () => {
     const confirmed = window.confirm("Apakah kamu yakin ingin menghapus data ini?");
     if (confirmed) {
       try {
-        const response = await fetch(`http://localhost:4000/requestsandi/${id}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/requestsandi/${id}`, {
           method: "DELETE",
         });
         if (!response.ok) {

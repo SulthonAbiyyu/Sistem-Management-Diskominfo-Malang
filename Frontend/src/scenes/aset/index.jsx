@@ -56,9 +56,9 @@ const Aset = () => {
     const fetchData = async () => {
       try {
         const [asetResponse, kategoriResponse, subkategoriResponse] = await Promise.all([
-          fetch("http://localhost:4000/aset"),
-          fetch("http://localhost:4000/kategori"),
-          fetch("http://localhost:4000/subkategori")
+          fetch("${process.env.REACT_APP_API_URL}/aset"),
+          fetch("${process.env.REACT_APP_API_URL}/kategori"),
+          fetch("${process.env.REACT_APP_API_URL}/subkategori")
         ]);
         
         if (!asetResponse.ok || !kategoriResponse.ok || !subkategoriResponse.ok) {
@@ -109,7 +109,7 @@ const Aset = () => {
     const confirmed = window.confirm("Apakah kamu yakin ingin menghapus data ini?");
     if (confirmed) {
       try {
-        const response = await fetch(`http://localhost:4000/aset/${id}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/aset/${id}`, {
           method: "DELETE",
         });
         if (response.ok) {
@@ -151,7 +151,7 @@ const Aset = () => {
       formData.append("beritaacara", file);
 
       try {
-        const response = await fetch(`http://localhost:4000/aset/${id}/beritaacara`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/aset/${id}/beritaacara`, {
           method: "POST",
           body: formData
         });
@@ -263,8 +263,8 @@ const Aset = () => {
       align: 'center',
       renderCell: (params) => {
         const imageUrl = params.value.startsWith("/uploads/")
-          ? `http://localhost:4000${params.value}`
-          : `http://localhost:4000/uploads/${params.value}`;
+          ? `${process.env.REACT_APP_API_URL}${params.value}`
+          : `${process.env.REACT_APP_API_URL}/uploads/${params.value}`;
 
         return (
           <Box

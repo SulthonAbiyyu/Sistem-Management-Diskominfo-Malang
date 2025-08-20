@@ -25,7 +25,7 @@ const EditUsers = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/users/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${id}`);
         if (response.ok) {
           const data = await response.json();
           // Pre-fill form dengan data user yang sudah ada
@@ -68,7 +68,7 @@ const EditUsers = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:4000/users/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${id}`, {
         method: 'PUT',  // Change to PUT for editing existing data
         body: formData,
       });

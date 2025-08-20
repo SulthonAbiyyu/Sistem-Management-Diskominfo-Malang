@@ -25,7 +25,7 @@ const TambahResetSandi = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:4000/requestsandi', {
+      const response = await fetch('${process.env.REACT_APP_API_URL}/requestsandi', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -102,7 +102,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchUnhandledRequests = async () => {
       try {
-        const response = await fetch('http://localhost:4000/requestsandi');
+        const response = await fetch('${process.env.REACT_APP_API_URL}/requestsandi');
         const data = await response.json();
         setUnhandledRequestCount(data.length); // Set jumlah permintaan yang belum ditangani
       } catch (error) {
@@ -161,7 +161,7 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     try {
-        const response = await fetch(`http://localhost:4000/users/logout/${userId}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/users/logout/${userId}`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
@@ -234,7 +234,7 @@ const Sidebar = () => {
               <Box display="flex" justifyContent="center" alignItems="center">
                 <Avatar
                   alt="profile-user"
-                  src={user.foto ? `http://localhost:4000${user.foto}` : "/assets/pp-petek.jpg"}
+                  src={user.foto ? `${process.env.REACT_APP_API_URL}${user.foto}` : "/assets/pp-petek.jpg"}
                   sx={{ width: 100, height: 100, cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>

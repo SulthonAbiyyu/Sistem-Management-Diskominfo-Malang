@@ -15,7 +15,7 @@ const EditKategori = () => {
   useEffect(() => {
     const fetchKategoriDetail = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/kategori/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/kategori/${id}`);
         const data = await response.json();
         setKategori(data.namakategori);
       } catch (error) {
@@ -34,7 +34,7 @@ const EditKategori = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:4000/kategori/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/kategori/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

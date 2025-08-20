@@ -17,10 +17,10 @@ const Kategori = () => {
   useEffect(() => {
     const fetchKategoriDanSubkategori = async () => {
       try {
-        const kategoriResponse = await fetch("http://localhost:4000/kategori");
+        const kategoriResponse = await fetch("${process.env.REACT_APP_API_URL}/kategori");
         const kategoriData = await kategoriResponse.json();
 
-        const subkategoriResponse = await fetch("http://localhost:4000/subkategori");
+        const subkategoriResponse = await fetch("${process.env.REACT_APP_API_URL}/subkategori");
         const subkategoriData = await subkategoriResponse.json();
 
         // Transformasi data agar setiap baris mewakili satu subkategori
@@ -49,7 +49,7 @@ const Kategori = () => {
     const confirmed = window.confirm("Apakah kamu yakin ingin menghapus data ini?");
     if (confirmed) {
       try {
-        const response = await fetch(`http://localhost:4000/kategori/${id}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/kategori/${id}`, {
           method: "DELETE",
         });
         if (response.ok) {
