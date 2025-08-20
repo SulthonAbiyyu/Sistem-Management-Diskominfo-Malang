@@ -1,0 +1,369 @@
+{
+  "aset": [
+    {
+      "id": 4,
+      "namabarang": "mikrotik",
+      "kategori": "1",
+      "subkategori": "1",
+      "noseri": "HE10G5YVQH/301r2",
+      "tanggalmasuk": "2024-02-01",
+      "tanggalkeluar": "2024-09-06",
+      "lokasi": "Gudang",
+      "kondisibarang": "Kondisi Baik",
+      "createdAt": "2024-09-05T18:57:28.580Z",
+      "dokumentasi": "/uploads/1725567441553-394768059.jpg"
+    },
+    {
+      "id": 5,
+      "namabarang": "Rujie Switch",
+      "kategori": "1",
+      "subkategori": "1",
+      "noseri": "CAQ81WR010549",
+      "tanggalmasuk": "2024-01-23",
+      "tanggalkeluar": "2024-07-14",
+      "lokasi": "Gudang",
+      "kondisibarang": "Perlu Perbaikan",
+      "createdAt": "2024-09-05T19:00:41.329Z",
+      "dokumentasi": "/uploads/1725567431149-818200386.jpg"
+    },
+    {
+      "id": 6,
+      "namabarang": "D-Link switch",
+      "kategori": "1",
+      "subkategori": "1",
+      "noseri": "QSAQ129006914",
+      "tanggalmasuk": "2004-11-30",
+      "tanggalkeluar": "2005-11-30",
+      "lokasi": "Gudang",
+      "kondisibarang": "Aset Hilang",
+      "createdAt": "2024-09-05T19:02:57.952Z",
+      "dokumentasi": "/uploads/1725567417233-308551846.jpg"
+    },
+    {
+      "id": 7,
+      "namabarang": "Ruijie",
+      "kategori": "1",
+      "subkategori": "1",
+      "noseri": "G11T04RE015425",
+      "tanggalmasuk": "2024-03-21",
+      "tanggalkeluar": "2024-07-20",
+      "lokasi": "Gudang",
+      "kondisibarang": "Perlu Diganti",
+      "createdAt": "2024-09-05T19:04:05.843Z",
+      "dokumentasi": "/uploads/1725567407316-825318130.jpg"
+    },
+    {
+      "id": 8,
+      "namabarang": "Belden network ",
+      "kategori": "1",
+      "subkategori": "4",
+      "noseri": "AL57752946",
+      "tanggalmasuk": "2024-02-12",
+      "tanggalkeluar": "2024-05-12",
+      "lokasi": "Gudang",
+      "kondisibarang": "Perlu Diganti",
+      "createdAt": "2024-09-05T19:05:43.696Z",
+      "dokumentasi": "/uploads/1725566290212-873433587.jpg"
+    },
+    {
+      "id": 9,
+      "namabarang": "test",
+      "kategori": "1",
+      "subkategori": "4",
+      "noseri": "test",
+      "tanggalmasuk": "2024-09-06",
+      "tanggalkeluar": "2024-09-06",
+      "lokasi": "Gudang",
+      "kondisibarang": "Kondisi Baik",
+      "createdAt": "2024-09-05T22:01:39.480Z",
+      "dokumentasi": "/uploads/1725573699492-513494393.jpg"
+    },
+    {
+      "id": 10,
+      "namabarang": "11",
+      "kategori": "3",
+      "subkategori": "8",
+      "noseri": "111",
+      "tanggalmasuk": "1111-11-11",
+      "tanggalkeluar": "2222-11-11",
+      "lokasi": "Gudang",
+      "kondisibarang": "Perlu Perbaikan",
+      "createdAt": "2024-09-22T15:01:03.967Z",
+      "dokumentasi": "/uploads/1727017263981-384651980.jpg"
+    },
+    {
+      "id": 11,
+      "namabarang": "11",
+      "kategori": "1",
+      "subkategori": "1",
+      "noseri": "213213131",
+      "tanggalmasuk": "1212-02-12",
+      "tanggalkeluar": "3333-12-12",
+      "lokasi": "Gudang",
+      "kondisibarang": "Aset Hilang",
+      "createdAt": "2024-09-22T15:03:06.630Z",
+      "dokumentasi": "/uploads/1727017386644-628645243.png"
+    },
+    {
+      "id": 12,
+      "namabarang": "jambu",
+      "kategori": "2",
+      "subkategori": "9",
+      "noseri": "1111",
+      "tanggalmasuk": "3222-12-12",
+      "tanggalkeluar": "7777-12-12",
+      "lokasi": "Gudang",
+      "kondisibarang": "Perlu Perbaikan",
+      "createdAt": "2024-09-23T04:13:06.898Z",
+      "dokumentasi": "/uploads/1727064786922-698874886.png"
+    },
+    {
+      "id": 13,
+      "namabarang": "avsb",
+      "kategori": "1",
+      "subkategori": "1",
+      "noseri": "00552424r",
+      "tanggalmasuk": "2025-05-22",
+      "tanggalkeluar": "2026-02-20",
+      "lokasi": "Gudang",
+      "kondisibarang": "Kondisi Baik",
+      "createdAt": "2024-10-02T01:33:12.205Z",
+      "dokumentasi": "/uploads/a326184426880780365b186666ca7051f0bd0f253b874c43b48260d1cf45f53e.jpeg"
+    },
+    {
+      "id": 14,
+      "namabarang": "wet,rrjre",
+      "kategori": "1",
+      "subkategori": "1",
+      "noseri": "ktrj5",
+      "tanggalmasuk": "2024-02-20",
+      "tanggalkeluar": "2025-02-22",
+      "lokasi": "Gudang",
+      "kondisibarang": "Kondisi Baik",
+      "createdAt": "2024-10-02T01:34:32.158Z",
+      "dokumentasi": "/uploads/ec250af418f937444cd480dbce13cd3b9253c8f446f3637979d4521f85d40e26.jpeg"
+    },
+    {
+      "id": 15,
+      "namabarang": "rog",
+      "kategori": "1",
+      "subkategori": "13",
+      "noseri": "aas23",
+      "tanggalmasuk": "2024-10-22",
+      "tanggalkeluar": "2024-11-22",
+      "lokasi": "Gudang",
+      "kondisibarang": "Kondisi Baik",
+      "createdAt": "2024-10-11T07:51:09.063Z",
+      "dokumentasi": "/uploads/dd660baf2399bdeacf075898aab58c668f2766530068472945efff09b055da8d.jpg"
+    }
+  ],
+  "kategori": [
+    {
+      "id": 1,
+      "namakategori": "Perangkat Jaringan",
+      "createdAt": "2024-08-30T16:45:10.846Z"
+    },
+    {
+      "id": 2,
+      "namakategori": "Perangkat Video Conference",
+      "createdAt": "2024-08-31T07:20:04.857Z"
+    },
+    {
+      "id": 3,
+      "namakategori": "Perangkat CCTV",
+      "createdAt": "2024-08-31T17:33:23.629Z"
+    },
+    {
+      "id": 4,
+      "namakategori": "Perangkat Pusat Data",
+      "createdAt": "2024-08-31T17:33:47.786Z"
+    },
+    {
+      "id": 5,
+      "namakategori": "Perangkat Operasional",
+      "createdAt": "2024-08-31T17:34:14.163Z"
+    }
+  ],
+  "subkategori": [
+    {
+      "id": 1,
+      "namasubkategori": "Router",
+      "kategoriId": 1
+    },
+    {
+      "id": 2,
+      "namasubkategori": "Kabel Tembaga",
+      "kategoriId": 2
+    },
+    {
+      "id": 3,
+      "namasubkategori": "kamera",
+      "kategoriId": 2
+    },
+    {
+      "id": 4,
+      "namasubkategori": "Akses Poin",
+      "kategoriId": 1
+    },
+    {
+      "id": 5,
+      "namasubkategori": "Server",
+      "kategoriId": 4
+    },
+    {
+      "id": 6,
+      "namasubkategori": "Cady Storage",
+      "kategoriId": 4
+    },
+    {
+      "id": 7,
+      "namasubkategori": "CCTV",
+      "kategoriId": 3
+    },
+    {
+      "id": 8,
+      "namasubkategori": "POE Injector",
+      "kategoriId": 3
+    },
+    {
+      "id": 9,
+      "namasubkategori": "Kabel HDMI",
+      "kategoriId": 2
+    },
+    {
+      "id": 10,
+      "namasubkategori": "Laptop",
+      "kategoriId": 5
+    },
+    {
+      "id": 11,
+      "namasubkategori": "Handphone",
+      "kategoriId": 5
+    },
+    {
+      "id": 12,
+      "namasubkategori": "kuepo",
+      "kategoriId": 5,
+      "createdAt": "2024-09-20T15:28:48.275Z",
+      "updatedAt": "2024-09-20T15:28:48.275Z"
+    },
+    {
+      "id": 13,
+      "namasubkategori": "cpu",
+      "kategoriId": 1,
+      "createdAt": "2024-10-11T07:50:11.439Z",
+      "updatedAt": "2024-10-11T07:50:11.439Z"
+    }
+  ],
+  "kondisi": [
+    {
+      "id": 6,
+      "kondisibarang": "Kondisi Baik",
+      "createdAt": "2024-08-31T11:51:38.050Z"
+    },
+    {
+      "id": 7,
+      "kondisibarang": "Perlu Perbaikan",
+      "createdAt": "2024-08-31T11:51:48.357Z"
+    },
+    {
+      "id": 8,
+      "kondisibarang": "Aset Hilang",
+      "createdAt": "2024-08-31T11:51:58.500Z"
+    },
+    {
+      "id": 9,
+      "kondisibarang": "Perlu Diganti",
+      "createdAt": "2024-08-31T11:52:07.415Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 3,
+      "foto": "/uploads/1725569016126-381253532.jpg",
+      "status": "offline",
+      "lastseen": "2025-06-19T17:53:57.530Z",
+      "name": "abi",
+      "password": "$2b$10$wJi97yOzqIWJ6YP0J.QC7.r2pmc/iRguPG6nV2b4ncVBPQ5.EMwZC",
+      "level": "admin"
+    },
+    {
+      "id": 4,
+      "name": "veros",
+      "password": "$2b$10$9Qygpoq9O6.U4Wg58cdRh.PTFkutZRZwPgmSOiq2Yew8tyljzIE52",
+      "level": "operator",
+      "status": "offline",
+      "foto": "/uploads/1725565560027-756716805.jpg",
+      "lastseen": "2024-09-23T04:26:15.528Z"
+    },
+    {
+      "id": 6,
+      "name": "tita",
+      "password": "$2b$10$KCWYFEoGUOI43ek/xlvAd.islB6cUcM1.jFExxTsDUbUPIQAESDhm",
+      "level": "operator",
+      "status": "offline",
+      "lastseen": "2024-09-22T15:31:42.957Z",
+      "foto": "/uploads/1725565592863-908358257.jpg"
+    },
+    {
+      "id": 7,
+      "password": "$2b$10$Wnb5qP4jUkbWFtEXy09bPexOxrNAMTJa.h8ymSvduskHF74A4xrs.",
+      "foto": "/uploads/1725565602589-510617780.jpg",
+      "status": "offline",
+      "lastseen": "2024-09-04T12:29:06.996Z",
+      "name": "amalia",
+      "level": "operator"
+    },
+    {
+      "id": 8,
+      "name": "niko",
+      "password": "$2b$10$n5O8nCRFXDipBonpQ5dKKO5RszIZ60ZxxH1Yi4tEDIb.qZLvi1Oi.",
+      "level": "admin",
+      "status": "offline",
+      "lastseen": "2024-09-23T04:27:31.416Z",
+      "foto": "/uploads/1725565616123-749807771.jpg"
+    },
+    {
+      "id": 9,
+      "name": "indri",
+      "password": "$2b$10$GtKlYSNxhiq7UBEulOGokuIv020ZyWOwD.pC6v2zVLeFZBNOu/BCO",
+      "level": "admin",
+      "createdAt": "2024-09-05T19:51:43.239Z",
+      "foto": "/uploads/1725565903259-150375450.jpg",
+      "status": "offline",
+      "lastseen": "2024-09-07T14:11:37.533Z"
+    },
+    {
+      "id": 10,
+      "name": "admin",
+      "password": "$2b$10$nK92q8Vw41yK0ZFbNB.RmOfqBSdqiTuKE4rVz6XcAi6lKlGkyacnu",
+      "level": "admin",
+      "createdAt": "2024-09-05T20:47:41.324Z",
+      "foto": "/uploads/1725569261336-694560073.png",
+      "status": "offline",
+      "lastseen": "2024-09-18T07:49:54.130Z"
+    },
+    {
+      "id": 11,
+      "name": "aini",
+      "password": "$2b$10$h9GTdC4NpTUsLG4GjYcTA.QEcNwXampliu5VKQbrEeiqQBOHRUEQq",
+      "level": "admin",
+      "createdAt": "2024-09-30T20:31:49.562Z",
+      "foto": "/uploads/30fcdac6b8ce48e641763a3383c241412918106b251e9e1159786f990f63f25d.jpg",
+      "status": "offline",
+      "lastseen": "2024-10-14T15:34:52.021Z"
+    }
+  ],
+  "requestsandi": [
+    {
+      "id": 1,
+      "requestresetsandi": "abi (081249754004)",
+      "createdAt": "2024-09-04T14:00:31.481Z"
+    },
+    {
+      "id": 2,
+      "requestresetsandi": "tes",
+      "createdAt": "2024-09-06T10:33:36.233Z"
+    }
+  ]
+}
