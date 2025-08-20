@@ -1,5 +1,13 @@
+# =========================================================
+# Global Ignore Rules for Fullstack (Frontend + Backend)
+# =========================================================
+
 # Node modules
 **/node_modules
+
+# Environment files
+*.env
+.env.*.local
 
 # Logs
 logs
@@ -24,9 +32,8 @@ out
 # Dependency directories
 jspm_packages/
 
-# Environment variables
-.env
-.env.*.local
+# Database / mock files
+db.json
 
 # IDE / Editor
 .vscode/
@@ -37,6 +44,6 @@ jspm_packages/
 *.sln
 *.sw?
 
-# Mac / Linux / Windows system files
+# System files (Mac / Windows / Linux)
 .DS_Store
 Thumbs.db
