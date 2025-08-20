@@ -18,7 +18,7 @@ const wss = new WebSocket.Server({ server });  // Gabung WebSocket dengan server
 
 // CORS Configuration for Production and Development
 const allowedOrigins = process.env.NODE_ENV === 'production'
-  ? []  //<<< example -'https://your-production-domain.com'-
+  ? ['https://NAMA-FRONTEND-KAMU.netlify.app'] 
   : ['http://localhost:5000'];
 
 app.use(cors({
