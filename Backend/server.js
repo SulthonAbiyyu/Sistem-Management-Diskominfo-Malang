@@ -20,23 +20,20 @@ const wss = new WebSocket.Server({ server });  // Gabung WebSocket dengan server
 const allowedOrigins = [
   "http://localhost:5000", // React lokal (kalau kamu jalanin di laptop)
   "http://localhost:3000", // kalau kadang pakai port 3000
-  "https://sistem-management-diskominfo-malang-o1ih5eegt.vercel.app", // vercel
+  "https://sistem-management-diskominfo-malang-g5om1wwbw.vercel.app", // vercel
 ];
 
 // Konfigurasi CORS
 app.use(
   cors({
     origin: function (origin, callback) {
-      // kalau tidak ada origin (misal Postman), izinkan
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.includes(origin)) {
+      if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(new Error("CORS blocked: " + origin));
+        callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true, // penting kalau pakai cookie / JWT di header
+    credentials: true, // kalau nanti butuh cookie/session
   })
 );
 
