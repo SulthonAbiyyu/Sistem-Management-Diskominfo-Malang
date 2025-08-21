@@ -18,24 +18,27 @@ const wss = new WebSocket.Server({ server });  // Gabung WebSocket dengan server
 
 // Daftar origin yang diizinkan
 const allowedOrigins = [
-  "http://localhost:5000", // frontend lokal (React default port)
-  "http://localhost:4000", // backend lokal (kalau dipanggil langsung)
-  "https://sistem-management-diskominfo-malang.vercel.app" // frontend production
+  "http://localhost:5000", // React lokal (kalau kamu jalanin di laptop)
+  "http://localhost:3000", // kalau kadang pakai port 3000
+  "https://sistem-management-diskominfo-malang-o1ih5eegt.vercel.app", // vercel
 ];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin (misal Postman)
-    if (!origin) return callback(null, true);
+// Konfigurasi CORS
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // kalau tidak ada origin (misal Postman), izinkan
+      if (!origin) return callback(null, true);
 
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true // kalau butuh cookie/token
-}));
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS blocked: " + origin));
+      }
+    },
+    credentials: true, // penting kalau pakai cookie / JWT di header
+  })
+);
 
 app.set('trust proxy', 1);  // Memberitahu Express bahwa server berjalan di balik proxy
 
