@@ -16,13 +16,25 @@ const server = http.createServer(app);  // Membuat HTTP server untuk WebSocket d
 const wss = new WebSocket.Server({ server });  // Gabung WebSocket dengan server yang sama
 
 
-// CORS Configuration for Production and Development
-const allowedOrigins = process.env.NODE_ENV === 'production'
-  ? ['https://sistem-management-diskominfo-malang.vercel.app'] 
-  : ['http://localhost:5000'];
+// Daftar origin yang diizinkan
+const allowedOrigins = [
+  "http://localhost:5000", // frontend lokal (React default port)
+  "http://localhost:4000", // backend lokal (kalau dipanggil langsung)
+  "https://sistem-management-diskominfo-malang.vercel.app" // frontend production
+];
 
 app.use(cors({
-  origin: "*"
+  origin: function (origin, callback) {
+    // allow requests with no origin (misal Postman)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true // kalau butuh cookie/token
 }));
 
 app.set('trust proxy', 1);  // Memberitahu Express bahwa server berjalan di balik proxy
