@@ -50,7 +50,7 @@ const Resetsandi = () => {
     fetchRequestResetSandi();
 
     // Menambahkan WebSocket connection
-    const socket = new WebSocket(process.env.REACT_APP_WS_URL);
+    const socket = new WebSocket('ws://localhost:4000');
 
     socket.onopen = () => {
       console.log('Connected to WebSocket server');
