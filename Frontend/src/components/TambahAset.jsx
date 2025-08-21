@@ -30,15 +30,15 @@ const TambahAset = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const kategoriResponse = await fetch('${process.env.REACT_APP_API_URL}/kategori');
+        const kategoriResponse = await fetch(`${process.env.REACT_APP_API_URL}/kategori`);
         const kategoriData = await kategoriResponse.json();
         setKategoriList(kategoriData);
 
-        const subKategoriResponse = await fetch('${process.env.REACT_APP_API_URL}/subkategori');
+        const subKategoriResponse = await fetch(`${process.env.REACT_APP_API_URL}/subkategori`);
         const subKategoriData = await subKategoriResponse.json();
         setSubKategoriList(subKategoriData);
 
-        const kondisiResponse = await fetch('${process.env.REACT_APP_API_URL}/kondisi');
+        const kondisiResponse = await fetch(`${process.env.REACT_APP_API_URL}/kondisi`);
         const kondisiData = await kondisiResponse.json();
         setKondisiList(kondisiData);
       } catch (error) {
@@ -94,7 +94,7 @@ const TambahAset = () => {
     }
   
     try {
-      const response = await fetch('${process.env.REACT_APP_API_URL}/aset', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/aset`, {
         method: 'POST',
         body: formData,
       });

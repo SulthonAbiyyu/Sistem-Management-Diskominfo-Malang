@@ -126,7 +126,7 @@ const Resetsandi = () => {
       align: "center",
       valueGetter: (params) => {
         const date = new Date(params.row.createdAt);
-        return date.toLocaleString('id-ID', { dateStyle: 'short', timeStyle: 'medium' });
+        return date.toLocaleString('id-ID, { dateStyle: 'short', timeStyle: 'medium' });
       },
     },
     {

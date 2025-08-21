@@ -35,7 +35,7 @@ const TambahUsers = () => {
 
 
     try {
-      const response = await fetch('${process.env.REACT_APP_API_URL}/users', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/users`, {
         method: 'POST',
         body: formData,
       });

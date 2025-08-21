@@ -102,7 +102,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchUnhandledRequests = async () => {
       try {
-        const response = await fetch('${process.env.REACT_APP_API_URL}/requestsandi');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/requestsandi`);
         const data = await response.json();
         setUnhandledRequestCount(data.length); // Set jumlah permintaan yang belum ditangani
       } catch (error) {

@@ -39,7 +39,7 @@ const EditSubKategori = () => {
   useEffect(() => {
     const fetchKategori = async () => {
       try {
-        const response = await fetch('${process.env.REACT_APP_API_URL}/kategori');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/kategori`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

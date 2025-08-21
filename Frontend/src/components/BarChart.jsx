@@ -10,7 +10,7 @@ const BarChart = ({ isDashboard = false }) => {
 
   // Fetch data from backend
   useEffect(() => {
-    fetch('${process.env.REACT_APP_API_URL}/users/status')
+    fetch(`${process.env.REACT_APP_API_URL}/users/status`)
       .then(response => response.json())
       .then(data => {
         if (Array.isArray(data)) {

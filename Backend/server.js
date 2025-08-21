@@ -22,7 +22,7 @@ const allowedOrigins = process.env.NODE_ENV === 'production'
   : ['http://localhost:5000'];
 
 app.use(cors({
-  origin: allowedOrigins
+  origin: "*"
 }));
 
 app.set('trust proxy', 1);  // Memberitahu Express bahwa server berjalan di balik proxy

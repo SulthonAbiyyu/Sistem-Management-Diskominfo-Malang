@@ -17,7 +17,7 @@ const TambahKategori = () => {
   useEffect(() => {
     const fetchKategori = async () => {
       try {
-        const response = await fetch('${process.env.REACT_APP_API_URL}/kategori');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/kategori`);
         const data = await response.json();
 
         // Dapatkan ID terbesar dan tentukan ID berikutnya
@@ -50,7 +50,7 @@ const TambahKategori = () => {
     };
 
     try {
-      const response = await fetch('${process.env.REACT_APP_API_URL}/kategori', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/kategori`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
