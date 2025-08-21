@@ -25,7 +25,7 @@ const BeritaAcara = () => {
   useEffect(() => {
     const fetchBarang = async () => {
       try {
-        const response = await fetch("${process.env.REACT_APP_API_URL}/aset");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/aset`);
         const data = await response.json();
         setBarang(data); // Set data barang
       } catch (error) {

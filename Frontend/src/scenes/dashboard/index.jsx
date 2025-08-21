@@ -45,7 +45,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchAset = async () => {
       try {
-        const response = await fetch("${process.env.REACT_APP_API_URL}/aset");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/aset`);
         const data = await response.json();
         setAset(data);
       } catch (error) {
@@ -60,7 +60,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchKategori = async () => {
       try {
-        const response = await fetch("${process.env.REACT_APP_API_URL}/kategori");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/kategori`);
         const data = await response.json();
         setKategoriList(data);
       } catch (error) {
@@ -73,7 +73,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchSubkategori = async () => {
       try {
-        const response = await fetch("${process.env.REACT_APP_API_URL}/subkategori");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/subkategori`);
         const data = await response.json();
         setSubkategoriList(data);
       } catch (error) {
@@ -87,7 +87,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchKondisi = async () => {
       try {
-        const response = await fetch("${process.env.REACT_APP_API_URL}/kondisi");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/kondisi`);
         const data = await response.json();
         setKondisiBarang(data);
       } catch (error) {

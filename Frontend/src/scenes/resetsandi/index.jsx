@@ -32,7 +32,7 @@ const Resetsandi = () => {
   // Fetch data from the 'requestresetsandi' table in the database
   const fetchRequestResetSandi = async () => {
     try {
-      const response = await fetch("${process.env.REACT_APP_API_URL}/requestsandi");
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/requestsandi`);
       if (!response.ok) {
         throw new Error("Gagal mengambil data reset sandi.");
       }
@@ -50,7 +50,7 @@ const Resetsandi = () => {
     fetchRequestResetSandi();
 
     // Menambahkan WebSocket connection
-    const socket = new WebSocket('ws://localhost:4000');
+    const socket = new WebSocket(process.env.REACT_APP_WS_URL);
 
     socket.onopen = () => {
       console.log('Connected to WebSocket server');

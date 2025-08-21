@@ -46,7 +46,7 @@ function App() {
 
 
   // Inisialisasi URL WebSocket di luar useEffect agar tidak dijadikan dependensi.
-  const websocketUrl = process.env.REACT_APP_WEBSOCKET_URL || 'ws://localhost:4000';
+  const websocketUrl = process.env.REACT_APP_WEBSOCKET_URL || process.env.REACT_APP_WS_URL;
 
   useEffect(() => {
     let reconnectAttempts = 0;

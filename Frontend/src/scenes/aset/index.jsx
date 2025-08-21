@@ -56,9 +56,9 @@ const Aset = () => {
     const fetchData = async () => {
       try {
         const [asetResponse, kategoriResponse, subkategoriResponse] = await Promise.all([
-          fetch("${process.env.REACT_APP_API_URL}/aset"),
-          fetch("${process.env.REACT_APP_API_URL}/kategori"),
-          fetch("${process.env.REACT_APP_API_URL}/subkategori")
+          fetch(`${process.env.REACT_APP_API_URL}/aset`),
+          fetch(`${process.env.REACT_APP_API_URL}/kategori`),
+          fetch(`${process.env.REACT_APP_API_URL}/subkategori`)
         ]);
         
         if (!asetResponse.ok || !kategoriResponse.ok || !subkategoriResponse.ok) {

@@ -17,10 +17,10 @@ const Kategori = () => {
   useEffect(() => {
     const fetchKategoriDanSubkategori = async () => {
       try {
-        const kategoriResponse = await fetch("${process.env.REACT_APP_API_URL}/kategori");
+        const kategoriResponse = await fetch(`${process.env.REACT_APP_API_URL}/kategori`);
         const kategoriData = await kategoriResponse.json();
 
-        const subkategoriResponse = await fetch("${process.env.REACT_APP_API_URL}/subkategori");
+        const subkategoriResponse = await fetch(`${process.env.REACT_APP_API_URL}/subkategori`);
         const subkategoriData = await subkategoriResponse.json();
 
         // Transformasi data agar setiap baris mewakili satu subkategori

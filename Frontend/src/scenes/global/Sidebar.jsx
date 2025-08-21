@@ -113,7 +113,7 @@ const Sidebar = () => {
     fetchUnhandledRequests();
     
     // Menambahkan WebSocket connection
-    const socket = new WebSocket('ws://localhost:4000');
+    const socket = new WebSocket(process.env.REACT_APP_WS_URL);
   
     socket.onopen = () => {
       console.log('Connected to WebSocket server');

@@ -28,7 +28,7 @@ const Kondisi = () => {
   useEffect(() => {
     const fetchKondisi = async () => {
       try {
-        const response = await fetch("${process.env.REACT_APP_API_URL}/kondisi");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/kondisi`);
         const data = await response.json();
         setKondisi(data);
       } catch (error) {

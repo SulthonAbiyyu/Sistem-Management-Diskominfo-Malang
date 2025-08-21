@@ -21,7 +21,7 @@ const Users = () => {
 
   useEffect(() => {
     // WebSocket connection to the server on port 4000
-    const socket = new WebSocket('ws://localhost:4000');
+    const socket = new WebSocket(process.env.REACT_APP_WS_URL);
 
     socket.onopen = () => {
       console.log('WebSocket connected');
@@ -62,7 +62,7 @@ const Users = () => {
     // Fetch users from the server at the beginning
     const fetchUsers = async () => {
       try {
-        const response = await fetch("${process.env.REACT_APP_API_URL}/users");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/users`);
         const data = await response.json();
         setUsers(data);
       } catch (error) {
