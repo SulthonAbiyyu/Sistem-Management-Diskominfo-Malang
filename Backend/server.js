@@ -16,26 +16,35 @@ const server = http.createServer(app);  // Membuat HTTP server untuk WebSocket d
 const wss = new WebSocket.Server({ server });  // Gabung WebSocket dengan server yang sama
 
 
-// Daftar origin yang diizinkan
-const allowedOrigins = [
-  "http://localhost:5000", // React lokal (kalau kamu jalanin di laptop)
-  "http://localhost:3000", // kalau kadang pakai port 3000
-  "https://sistem-management-diskominfo-malang-g5om1wwbw.vercel.app", // vercel
-];
 
-// Konfigurasi CORS
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true, // kalau nanti butuh cookie/session
-  })
-);
+// daftar origin yang kita izinkan: localhost + semua vercel.app
+const allowedExact = new Set([
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5000'
+]);
+
+const isAllowedOrigin = (origin) => {
+  if (!origin) return true; // untuk request server-to-server
+  if (allowedExact.has(origin)) return true;
+  // izinkan semua subdomain vercel.app
+  if (/^https:\/\/[a-z0-9-]+\.vercel\.app$/.test(origin)) return true;
+  return false;
+};
+
+app.use(cors({
+  origin: (origin, cb) => {
+    if (isAllowedOrigin(origin)) return cb(null, true);
+    return cb(new Error('CORS blocked: ' + origin));
+  },
+  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+  credentials: true
+}));
+
+// Handle preflight
+app.options('*', cors());
+
+
 
 app.set('trust proxy', 1);  // Memberitahu Express bahwa server berjalan di balik proxy
 
@@ -686,19 +695,31 @@ app.post('/users', upload.single('foto'), async (req, res) => {
   res.json({ message: 'User berhasil ditambahkan', user: newUser });
 });
 
-// Login user dengan bcrypt
+
+// Update status user saat login
 app.post('/users/login', async (req, res) => {
   const { name, password } = req.body;
   const data = readData();
-  const user = data.users.find(user => user.name === name);
+  const user = data.users.find(u => u.name === name);
 
   if (user && await bcrypt.compare(password, user.password)) {
     user.status = "online";
     user.lastseen = new Date().toISOString();
     writeData(data);
-    res.json({ message: 'Login berhasil', user });
+
+    // Kirim respon ke frontend
+    res.json({ success: true, message: 'Login berhasil', user });
+
+    // Kirim status online ke semua client WebSocket
+    const payload = JSON.stringify({ type: 'status', user });
+    wss.clients.forEach(client => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(payload);
+      }
+    });
+
   } else {
-    res.status(401).json({ message: 'Login gagal' });
+    res.status(401).json({ success: false, message: 'Login gagal' });
   }
 });
 
@@ -759,31 +780,6 @@ app.delete('/users/:id', (req, res) => {
   res.json({ message: 'User berhasil dihapus', user: deletedUser[0] });
 });
 
-// Update status user saat login
-app.post('/users/login', (req, res) => {
-  const { name, password } = req.body;
-  const data = readData();
-  const user = data.users.find(user => user.name === name && user.password === password);
-
-  if (user) {
-    user.status = "online";
-    user.lastseen = new Date().toISOString();
-    writeData(data);
-    res.json({ message: 'Login berhasil', user });
-
-    // Kirim status online ke semua client WebSocket
-    const payload = JSON.stringify({ type: 'status', user });
-    wss.clients.forEach(client => {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(payload);
-      }
-    });
-  } else {
-    res.status(401).json({ message: 'Login gagal' });
-  }
-});
-
-
 
 // Endpoint logout user
 app.post('/users/logout/:id', (req, res) => {
@@ -816,15 +812,6 @@ app.post('/users/logout/:id', (req, res) => {
   }
 });
 
-// Endpoint untuk mendapatkan semua permintaan reset sandi
-app.get('/requestsandi', (req, res) => {
-  try {
-    const data = readData(); // Baca data dari file JSON
-    res.json(data.requestsandi); // Mengirimkan semua data requestsandi
-  } catch (error) {
-    res.status(500).json({ message: 'Gagal mengambil data request reset sandi', error: error.message });
-  }
-});
 
 // Jalankan server
 const PORT = process.env.PORT || 4000;

@@ -13,35 +13,35 @@ const LoginPage = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: username, password }),
+        // credentials: 'include' // aktifkan ini hanya jika kamu pakai cookie di server
       });
 
-      const result = await response.json();
+      // aman-kan parsing json
+      const result = await response.json().catch(() => ({}));
 
-      if (response.ok) {
-        // Save user data to localStorage
-        localStorage.setItem('currentUser', JSON.stringify(result.user));
-
-        // Perform login
-        login();
-
-        // Redirect to the main page
-        navigate('/');
-      } else {
-        alert(result.message);
+      if (!response.ok) {
+        return alert(result?.message || `Login gagal (${response.status})`);
       }
+
+      // result.success di-backend sudah kita pasang
+      if (!result?.success) {
+        return alert(result?.message || 'Login gagal');
+      }
+
+      localStorage.setItem('currentUser', JSON.stringify(result.user));
+      login();
+      navigate('/');
     } catch (error) {
-      console.error("Error during login:", error);
-      alert("An error occurred during login. Please try again.");
+      console.error('Error during login:', error);
+      alert('Terjadi error saat login. Coba lagi.');
     }
   };
+
 
   const handleClickShowPassword = () => setShowPassword(!showPassword);
 

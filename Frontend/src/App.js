@@ -34,8 +34,8 @@ import { SearchProvider } from "./components/SearchContext";
 export const WebSocketContext = createContext();
 
 function App() {
-  console.log("REACT_APP_API_URL =", process.env.REACT_APP_API_URL);
-  console.log("REACT_APP_WEBSOCKET_URL =", process.env.REACT_APP_WEBSOCKET_URL);
+  console.log('REACT_APP_API_URL =', process.env.REACT_APP_API_URL);
+  console.log('REACT_APP_WEBSOCKET_URL =', process.env.REACT_APP_WEBSOCKET_URL);
   const [ws, setWs] = useState(null);
   const [userStatuses, setUserStatuses] = useState({});
   const [asetData, setAsetData] = useState([]);
