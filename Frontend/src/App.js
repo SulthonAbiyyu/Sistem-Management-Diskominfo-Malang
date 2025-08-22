@@ -35,7 +35,7 @@ export const WebSocketContext = createContext();
 
 function App() {
   console.log('REACT_APP_API_URL =', process.env.REACT_APP_API_URL);
-  console.log('REACT_APP_WEBSOCKET_URL =', process.env.REACT_APP_WEBSOCKET_URL);
+  console.log('REACT_APP_WS_URL =', process.env.REACT_APP_WS_URL);
   const [ws, setWs] = useState(null);
   const [userStatuses, setUserStatuses] = useState({});
   const [asetData, setAsetData] = useState([]);
@@ -48,7 +48,7 @@ function App() {
 
 
   // Inisialisasi URL WebSocket di luar useEffect agar tidak dijadikan dependensi.
-  const websocketUrl = process.env.REACT_APP_WEBSOCKET_URL || process.env.REACT_APP_WS_URL;
+  const websocketUrl = process.env.REACT_APP_WS_URL || process.env.REACT_APP_WS_URL;
 
   useEffect(() => {
     let reconnectAttempts = 0;
