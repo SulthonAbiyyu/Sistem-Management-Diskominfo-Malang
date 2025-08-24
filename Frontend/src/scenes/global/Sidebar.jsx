@@ -82,9 +82,9 @@ const Sidebar = () => {
   const [selected, setSelected] = useState("Dashboard");
   const navigate = useNavigate();
 
-  // Ambil user dari localStorage
+  // Ambil user dari sessionStorage
   const [user, setUser] = useState(() => {
-    const savedUser = localStorage.getItem('currentUser');
+    const savedUser = sessionStorage.getItem('currentUser');
     return savedUser ? JSON.parse(savedUser) : null;
   });
   const userId = user ? user.id : null;
@@ -169,7 +169,7 @@ const Sidebar = () => {
         });
 
         if (response.ok) {
-            localStorage.removeItem('currentUser');
+            sessionStorage.removeItem('currentUser');
             alert('Logout successful');
             navigate('/login'); 
         } else {

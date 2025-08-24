@@ -14,9 +14,9 @@ const SettingAkun = () => {
   const navigate = useNavigate();
   const theme = useTheme();
 
-  // Mengambil data user yang login dari localStorage
+  // Mengambil data user yang login dari sessionStorage
   useEffect(() => {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     if (currentUser && currentUser.id) {
       fetch(`${process.env.REACT_APP_API_URL}/users/${currentUser.id}`)
         .then((response) => response.json())

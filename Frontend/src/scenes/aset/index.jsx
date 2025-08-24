@@ -47,7 +47,7 @@ const Aset = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const savedUser = localStorage.getItem("currentUser");
+      const savedUser = sessionStorage.getItem("currentUser");
       if (savedUser) {
         setUser(JSON.parse(savedUser));
       }

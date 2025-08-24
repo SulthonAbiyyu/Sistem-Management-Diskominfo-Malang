@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = ({ children, requiredLevel }) => {
   const { isLoggedIn } = useAuth();
-  const user = JSON.parse(localStorage.getItem('currentUser'));
+  const user = JSON.parse(sessionStorage.getItem('currentUser'));
 
   if (!isLoggedIn || !user) {
     return <Navigate to="/login" />;

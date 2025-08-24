@@ -6,8 +6,8 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    // Check localStorage for login status during initialization
-    const savedLoginStatus = localStorage.getItem("isLoggedIn");
+    // Check sessionStorage for login status during initialization
+    const savedLoginStatus = sessionStorage.getItem("isLoggedIn");
     return savedLoginStatus === "true";
   });
 
@@ -15,16 +15,16 @@ export const AuthProvider = ({ children }) => {
 
   const login = useCallback(() => {
     setIsLoggedIn(true);
-    localStorage.setItem("isLoggedIn", "true"); // Save login status in localStorage
-    navigate("/"); // Redirect to dashboard after login
+    sessionStorage.setItem("isLoggedIn", "true"); 
+    navigate("/"); 
   }, [navigate]);
 
   const logout = useCallback(() => {
     setIsLoggedIn(false);
-    localStorage.setItem("isLoggedIn", "false"); // Remove login status from localStorage
+    sessionStorage.setItem("isLoggedIn", "false"); 
 
     // Update user's status to offline on the server
-    const savedUser = localStorage.getItem("currentUser");
+    const savedUser = sessionStorage.getItem("currentUser");
     const userId = savedUser ? JSON.parse(savedUser).id : null;
     if (userId) {
       fetch(`${process.env.REACT_APP_API_URL}/users/logout/${userId}`, {
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
   }, [navigate]);
 
   useEffect(() => {
-    const savedLoginStatus = localStorage.getItem("isLoggedIn");
+    const savedLoginStatus = sessionStorage.getItem("isLoggedIn");
   
     // Jika pengguna tidak login, jangan redirect ke halaman login jika mereka mengakses halaman tertentu
     if (savedLoginStatus !== "true") {

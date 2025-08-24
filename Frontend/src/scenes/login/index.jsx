@@ -33,7 +33,9 @@ const LoginPage = () => {
         return alert(result?.message || 'Login gagal');
       }
 
-      localStorage.setItem('currentUser', JSON.stringify(result.user));
+      // 🔑 simpan data login di sessionStorage
+      sessionStorage.setItem('currentUser', JSON.stringify(result.user));
+      sessionStorage.setItem('isLoggedIn', "true");
       login();
       navigate('/');
     } catch (error) {
