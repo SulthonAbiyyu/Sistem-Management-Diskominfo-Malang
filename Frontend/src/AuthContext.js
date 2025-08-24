@@ -1,12 +1,10 @@
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-// Create AuthContext
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    // Check sessionStorage for login status during initialization
     const savedLoginStatus = sessionStorage.getItem("isLoggedIn");
     return savedLoginStatus === "true";
   });
@@ -15,60 +13,57 @@ export const AuthProvider = ({ children }) => {
 
   const login = useCallback(() => {
     setIsLoggedIn(true);
-    sessionStorage.setItem("isLoggedIn", "true"); 
+    sessionStorage.setItem("isLoggedIn", "true");
     navigate("/"); 
   }, [navigate]);
 
   const logout = useCallback(() => {
     setIsLoggedIn(false);
-    sessionStorage.setItem("isLoggedIn", "false"); 
+    sessionStorage.setItem("isLoggedIn", "false");
 
-    // Update user's status to offline on the server
     const savedUser = sessionStorage.getItem("currentUser");
     const userId = savedUser ? JSON.parse(savedUser).id : null;
     if (userId) {
       fetch(`${process.env.REACT_APP_API_URL}/users/logout/${userId}`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
       });
     }
 
-    navigate("/login"); // Redirect to login page after logout
+    navigate("/login");
   }, [navigate]);
 
   useEffect(() => {
+    localStorage.clear();
     const savedLoginStatus = sessionStorage.getItem("isLoggedIn");
-  
-    // Jika pengguna tidak login, jangan redirect ke halaman login jika mereka mengakses halaman tertentu
-    if (savedLoginStatus !== "true") {
+
+    if (savedLoginStatus === "true") {
+      setIsLoggedIn(true);
+    } else {
       if (window.location.pathname !== "/tambahresetsandi") {
         navigate("/login");
       }
-    } else {
-      setIsLoggedIn(true);
     }
-  
-    const handleBeforeUnload = (event) => {
-      sessionStorage.setItem("isPageBeingClosed", "true");
-    };
-  
+
+    // ✅ kalau tab ditutup / browser ditutup → user jadi offline
     const handleUnload = () => {
-      if (sessionStorage.getItem("isPageBeingClosed")) {
-        logout(); // Log out the user
+      const savedUser = sessionStorage.getItem("currentUser");
+      const userId = savedUser ? JSON.parse(savedUser).id : null;
+
+      if (userId) {
+        navigator.sendBeacon(
+          `${process.env.REACT_APP_API_URL}/users/logout/${userId}`,
+          JSON.stringify({})
+        );
       }
     };
-  
-    window.addEventListener("beforeunload", handleBeforeUnload);
+
     window.addEventListener("unload", handleUnload);
-  
+
     return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
       window.removeEventListener("unload", handleUnload);
     };
-  }, [navigate, logout]);
-  
+  }, [navigate]);
 
   return (
     <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
